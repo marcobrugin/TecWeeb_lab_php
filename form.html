@@ -39,7 +39,7 @@
     </nav>
     <main id="contenuto">
         <h1>Form di inserimento</h1>
-        <form action="">
+        <form action="" method="POST">
             <fieldset>
                 <legend>Dati Personali</legend>
                     <label for="Nome">Nome:</label>
@@ -51,7 +51,7 @@
                     <label for="Luogo">Luogo di nascita:</label>
                     <input name="luogo" id="Luogo"  maxlength="20" placeholder="Luogo" required="required"/>
                     <label for="Altezza">Altezza:</label>
-                    <input type="number" name="altezza" id="Altezza" min="150" max="215" required="required"/>
+                    <input type="number" name="altezza" id="Altezza" min="150" max="215" required="required" placeholder="150"/>
             </fieldset>
             <fieldset>
                 <legend>Dati Professionali</legend>
@@ -60,30 +60,30 @@
                 <label for="Ruolo">Ruolo:</label>
                 <input  list="ruoli" name="Ruolo" id="Ruolo" placeholder="Palleggiatore" required="required"/>
                     <datalist id="ruoli">
-                        <option value="Palleggiatore">
-                        <option value="Libero">
-                        <option value="Schiacciatore">
-                        <option value="Alzatore"> 
+                        <option value="Palleggiatore">Palleggiatore</option>
+                        <option value="Libero">Libero</option>
+                        <option value="Schiacciatore">Schiacciatore</option>
+                        <option value="Alzatore"> Schiacciatore</option>
                     </datalist>
                 <label for="Numero">Numero di maglia:</label>
-                <input type="number" name="Numero" id="numero" min="1" max="100" required="required"/>
+                <input type="number" name="numero" id="Numero" min="0" max="100" required="required" placeholder="0"/>
                 <label for="Punti">Punti Totali:</label>
-                <input type="number" name="punti" id="Punti" min="1" max="1000" required="required"/>
+                <input type="number" name="punti" id="Punti" min="0" max="1000" required="required" placeholder="0"/>
             </fieldset>
             <fieldset>
                 <legend>Dati della Nazionale Italiana</legend>
                     <label for="Nazionale">Numero di maglia in nazionale:</label>
-                    <input type="number" name="Nazionale" id="nazionale" min="1" max="100" required="required"/>
-                    <label>Capitano:</label>
+                    <input type="number" name="nazionale" id="Nazionale" min="0" max="100" required="required" placeholder="0"/>
+                    <label for="capitano_si">Capitano:</label>
                     <input type="radio" name="capitano" id="capitano_si" value="SI" required="required"/><label for="capitano_si">SI</label>
                     <input type="radio" name="capitano" id="capitano_no" value="NO" required="required"/><label for="capitano_no" >NO</label>
             </fieldset>
             <fieldset>
                 <legend>OPTIONAL</legend>
                     <label for="Riconoscimenti">Riconoscimenti:</label>
-                    <textarea id="Riconoscimenti" name="riconoscimenti" rows="4" cols="60">Inserisci i riconoscimenti:</textarea>
+                    <textarea id="Riconoscimenti" name="riconoscimenti" rows="4" cols="60" placeholder="Inserisci i riconoscimenti:"></textarea>
                     <label for="Note">Note:</label>
-                    <textarea id="Note" name="note" rows="2" cols="30">Inserisci le note:</textarea>  
+                    <textarea id="Note" name="note" rows="2" cols="30" placeholder="Inserisci le note:"></textarea>  
             </fieldset>
             <input type="submit" name="INVIA"/>
             <input type="reset" name="RESET"/>
