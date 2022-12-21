@@ -5,7 +5,7 @@ class DBAccess{
     private const HOST_DB='127.0.0.1';
     private const DATABASE_NAME='mbrugin';
     private const USERNAME='mbrugin';
-    private const PASSWORD='eingohha5Iemuaba';
+    private const PASSWORD='';
     private $connection;
     public function openDBConnection() {
         mysqli_report(MYSQLI_REPORT_ERROR);
