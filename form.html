@@ -14,6 +14,12 @@
         <link rel="stylesheet" href="mini.css" media="handheld, only screen and (max-device-width:600px)"/><!-- eventualmenet sovrascrivo delle regoel è un checkpoint only --> 
     </head>
     <body>
+        <header>
+            <!-- here you must do a imahge replacement -->
+            <h1>
+                FEDERAZIONE ITALIANA PALLAVOLO
+            </h1>
+        </header>
     <nav id="breadcrumb">
         <p>
             Ti trovi in: <span lang="en"> <a href="index.html">Home</a></span> &gt; &gt; Form
@@ -29,7 +35,7 @@
                 <a href="allenatore.html">L'allenatore</a>
             </li>
             <li>
-                <a href="squadra.html">La squadra</a>
+                <a href="squadra.php">La squadra</a>
             </li>
             <li id="currentLink">Form</li>
             <li>
@@ -39,55 +45,78 @@
     </nav>
     <main id="contenuto">
         <h1>Form di inserimento</h1>
-        <form action="" method="POST">
+        <form method="POST" action="giocatore.php">
+	
+            <messaggiForm />
+        
             <fieldset>
-                <legend>Dati Personali</legend>
-                    <label for="Nome">Nome:</label>
-                    <input name="nome" id="Nome"  maxlength="12" placeholder="Nome" required="required"/>
-                    <label for="Cognome">Cognome:</label>
-                    <input name="cognome" id="Cognome"  maxlength="12" placeholder="Cognome" required="required"/>
-                    <label for="Nascita">Data di nascita:</label>
-                    <input  type="date" name="nascita" id="Nascita" min="1900-01-01" max="2023-01-01" required="required"/>
-                    <label for="Luogo">Luogo di nascita:</label>
-                    <input name="luogo" id="Luogo"  maxlength="20" placeholder="Luogo" required="required"/>
-                    <label for="Altezza">Altezza:</label>
-                    <input type="number" name="altezza" id="Altezza" min="150" max="215" required="required" placeholder="150"/>
+                <legend>Informazioni generali</legend>
+            
+                <label for="nome">Nome e Cognome: </label>
+                <span><input type="text" name="nome" id="nome"  value="<valoreNome />" /></span>
+        
+                <p>Capitano?</p>
+        
+                <span><input type="radio" id="capitano_si" name="capitano" value="<capitanosi/>" /></span>
+                <label for="capitano_si">Si</label><br />
+                <span><input type="radio" id="capitano_no" name="capitano" value="<capitanono/>" checked /></span>
+                <label for="capitano_no">No</label><br />
+        
+            
+                <label for="dataNascita">Data di Nascita: </label>
+                <span><input type="date" name="dataNascita" id="dataNascita" value="<valData />" required/></span><br />
+        
+                <label for="luogo">Luogo di Nascita: </label>
+                <span><input type="text" name="luogo" id="luogo" value="<valLuogo />" required/></span><br />
+                
+                <label for="altezza">Altezza: </label> 
+                <span><input type="number" min="130" name="altezza" id="altezza" value="<valoreAltezza />"/></span><br />
             </fieldset>
+            
             <fieldset>
-                <legend>Dati Professionali</legend>
-                <label for="Squadra">Squadra:</label>
-                <input name="squadra" id="Squadra"  maxlength="30" placeholder="Squadra" required="required"/>
-                <label for="Ruolo">Ruolo:</label>
-                <input  list="ruoli" name="Ruolo" id="Ruolo" placeholder="Palleggiatore" required="required"/>
-                    <datalist id="ruoli">
-                        <option value="Palleggiatore">Palleggiatore</option>
-                        <option value="Libero">Libero</option>
-                        <option value="Schiacciatore">Schiacciatore</option>
-                        <option value="Alzatore"> Schiacciatore</option>
-                    </datalist>
-                <label for="Numero">Numero di maglia:</label>
-                <input type="number" name="numero" id="Numero" min="0" max="100" required="required" placeholder="0"/>
-                <label for="Punti">Punti Totali:</label>
-                <input type="number" name="punti" id="Punti" min="0" max="1000" required="required" placeholder="0"/>
+                <legend>Squadra</legend>
+            
+                <label for="squadra">Squadra in campionato: </label>
+                <span><input type="text" name="squadra" id="squadra"  value="<valoreSquadra />"/></span><br />
+            
+                <label for="maglia">Maglia: </label>
+                <span><input type="number" min="1" name="maglia" id="maglia" value="<valoreMaglia />" /></span><br />
             </fieldset>
+        
             <fieldset>
-                <legend>Dati della Nazionale Italiana</legend>
-                    <label for="Nazionale">Numero di maglia in nazionale:</label>
-                    <input type="number" name="nazionale" id="Nazionale" min="0" max="100" required="required" placeholder="0"/>
-                    <label for="capitano_si">Capitano:</label>
-                    <input type="radio" name="capitano" id="capitano_si" value="SI" required="required"/><label for="capitano_si">SI</label>
-                    <input type="radio" name="capitano" id="capitano_no" value="NO" required="required"/><label for="capitano_no" >NO</label>
+                <legend>Nazionale</legend>
+            
+                <label for="ruolo">Ruolo: </label>
+                <select id="ruolo" name="ruolo" value="<valoreRuolo />">
+                      <option value="Palleggiatore">Palleggiatore</option>
+                      <option value="Libero">Libero</option>
+                      <option value="Centrale">Centrale</option>
+                      <option value="Schiacciatore">Schiacciatore</option>
+                      <option value="Opposto">Opposto</option>
+                </select><br />
+            
+                <label for="magliaNazionale">Maglia in Nazionale: </label>
+                <span><input type="number" min="1" name="magliaNazionale" id="magliaNazionale" value="<valoreMagliaNazionale />" /></span><br />
             </fieldset>
+            
             <fieldset>
-                <legend>OPTIONAL</legend>
-                    <label for="Riconoscimenti">Riconoscimenti:</label>
-                    <textarea id="Riconoscimenti" name="riconoscimenti" rows="4" cols="60" placeholder="Inserisci i riconoscimenti:"></textarea>
-                    <label for="Note">Note:</label>
-                    <textarea id="Note" name="note" rows="2" cols="30" placeholder="Inserisci le note:"></textarea>  
+                <legend>Carriera</legend>
+                <label for="punti">Punti/ricezioni: </label>
+                <span><input type="number" min="1" name="punti" id="punti" value="<valorePunti />" /></span><br />
+                <label for="riconoscimenti">Riconoscimenti: </label>
+                <span><textarea id="riconoscimenti" name="riconoscimenti"><valoreRiconoscimenti /></textarea></span><br />
+                <label for="note">Note: </label>
+                <span><textarea id="note" name="note"><valoreNote /></textarea></span><br />
+                
             </fieldset>
-            <input type="submit" name="INVIA"/>
-            <input type="reset" name="RESET"/>
-        </form>
+            
+            <fieldset>
+                <legend>Bottoni</legend>
+                <input type="submit" id="submit" name="submit" class="margineSinistro" value="Inserisci giocatore" />
+                <input type="reset" id="reset" class="margineSinistro" value="Cancella tutto" />
+            </fieldset>
+            
+            </form>
     </main>
     <footer>
         <img src="images/valid-xhtml10.png" alt="W3C html valido" />
